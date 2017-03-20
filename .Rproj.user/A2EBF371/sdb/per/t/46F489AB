@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\n\n# All the variables can be deleted by using the rm() and ls() function together.\n\nprint(ls())\n'or'\nls()\n\nrm(list = ls())\n",
+    "created" : 1489922222964.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3962839680",
+    "id" : "46F489AB",
+    "lastKnownWriteTime" : 1489922376,
+    "last_content_update" : 1489922376902,
+    "path" : "~/GitHub/DS-RP-ML/R/Scripts/0 R Tutorial/0 Basic Syntax.R",
+    "project_path" : "R/Scripts/0 R Tutorial/0 Basic Syntax.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
