@@ -1,0 +1,65 @@
+---
+title: "Regression"
+author: "Vinay Kumar"
+date: "March 24, 2017"
+output: html_document
+---
+
+
+## Simple Liner Regression
+
+
+**Formula**
+
+$y = b_0 + b_1*X_1$
+
+**Variable Defination**
+
+* y = Dependent variable(DV).
+* X = Independent variable(IV).
+* $b_1$ = Cofficient for the Independent variable.
+* $b_0$ = Constant term.
+
+```{r=Simple Liner Regression}
+
+```
+
+
+**Example for Simple Linear Regression**
+
+In this example where we have experience and salary So experience is going to be out horizontal axis and the salary is all vertical axis and we want to understand how people's salary depends on their experence
+
+*So here what Regression does:*
+
+*Formula* : $y = b_0 + b_1*X_1$
+
+*In our case the Formula* : $Salary = b_0 + b_1*Experience$
+
+*Constant $b_0$* : The Constant means the point where the line crosses the vertical axis and let's say it's the Basic (or) Starting salary let's assume 30000 was the starting salary if the person have no exprence joined in the company.
+
+*Cofficient $b_1$* : This is the slope of the line and the steeper the line the more you get more money you get per extra year of expereience.
+
+**Ordinary Least Squares**
+
+*how to Find the best fitting line (or) how the simple linear regression find the line for you.*
+
+The ordinary least squares (OLS) or linear least squares is a method for estimating the unknown parameters in a linear regression model, with the goal of minimizing the sum of the squares of the differences between the observed responses (values of the variable being predicted) in the given dataset and those predicted by a linear function of a set of explanatory variables. Visually this is seen as the sum of the squared vertical distances between each data point in the set and the corresponding point on the regression line – the smaller the differences, the better the model fits the data. The resulting estimator can be expressed by a simple formula, especially in the case of a single regressor on the right-hand side.
+
+
+*Example*
+
+A person with 10 years of experience is earning $100000. But the linear line at the bottom it acatually tells us where the person should be sitting according to the model in terms of salary.
+
+So here there two observations they are:
+
+1. Actual observations : $y_i$
+2. Model observations : $\hat{y_i}$
+
+The difference between the Actual and modeled observation for the level of independent varable.
+to calculate the best fitting line we will take the sum distances between Actual and model then take some of the squares.
+
+*Formula* : SUM$(y_i - \hat{y_i})^2$ --> min
+
+it will calculate the deference form each observation then draw the fitted line and that is called the ordinary least squares method.
+
+<https://en.wikipedia.org/wiki/Ordinary_least_squares>

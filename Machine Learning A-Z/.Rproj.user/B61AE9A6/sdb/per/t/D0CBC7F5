@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Simple linear regression\n\n# Importing the dataset\ndataset <- read.csv('Salary_Data.csv')\ndataset\n\n# Splitting the dataset into the Training set and Test set\n#install.packages('caTools')\nlibrary(caTools)\n\nset.seed(123)\nsplit <- sample.split(dataset$Salary, SplitRatio = 2/3)\nsplit\ntraining_set <- subset(dataset, split == T)\ntest_set <- subset(dataset, split == F)\ntraining_set\ntest_set\n\n# Feature Scaling\n\n# training_set[,2:3] <- scale(training_set[,2:3])\n# test_set[,2:3] <- scale(test_set[,2:3])\n# training_set\n# test_set\n\n# Fitting Simple linear regression to the Training set\n\nregressor <- lm(formula = Salary ~ YearsExperience, \n                data = training_set)\nsummary(regressor)\n\n# Predicting the Test set results\n\ny_pred <- predict(regressor, newdata = test_set)\ny_pred\n\n# Visualising the Training set results\n#install.packages('ggplot2')\nlibrary(ggplot2)\n\nggplot() +\n  geom_point(aes(x = training_set$YearsExperience, y = training_set$Salary),\n             colour = 'red') + \n  stat_smooth(mapping = aes(x = training_set$YearsExperience, y = training_set$Salary),\n              method = 'lm',colour = 'blue') +\n  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),\n            colour = 'blue') + \n  ggtitle('Salary vs Experience (Training set)') +\n  xlab('Years of experience') +\n  ylab('Salary')\n\n# Visualising the Test set results\nlibrary(ggplot2)\n\nggplot() +\n  geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),\n             colour = 'red') + \n  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),\n            colour = 'blue') + \n  ggtitle('Salary vs Experience (Training set)') +\n  xlab('Years of experience') +\n  ylab('Salary')\n",
+    "created" : 1490353026580.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "960103914",
+    "id" : "D0CBC7F5",
+    "lastKnownWriteTime" : 1490356913,
+    "last_content_update" : 1490356913307,
+    "path" : "~/Machine Learning A-Z/Part 2 - Regression/Section 4 - Simple Linear Regression/SLR.R",
+    "project_path" : "Part 2 - Regression/Section 4 - Simple Linear Regression/SLR.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

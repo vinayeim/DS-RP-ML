@@ -1,0 +1,57 @@
+# Data Preprocessing
+
+# Importing the dataset
+
+dataset <- read.csv('Data.csv')
+dataset
+
+# Taking care of missing data
+
+dataset$Age <- ifelse(is.na(dataset$Age),
+                  ave(dataset$Age,FUN = function(x) mean(x,na.rm = T)),
+                  dataset$Age)
+
+dataset$Salary <- ifelse(is.na(dataset$Salary),
+                      ave(dataset$Salary,FUN = function(x) mean(x,na.rm = T)),
+                      dataset$Salary)
+
+# or
+
+dataset$Age[is.na(dataset$Age)] <- mean(dataset$Age, na.rm = T)
+dataset$Age[is.na(dataset$Age)]
+dataset$Salary[is.na(dataset$Salary)] <- mean(dataset$Salary, na.rm = T)
+dataset$Salary[is.na(dataset$Salary)]
+
+# we can also update the null by group
+
+dataset$Salary <- ifelse(is.na(dataset$Salary),
+                         ave(dataset$Salary, dataset$Country, FUN = function(x) mean(x, na.rm = T)),
+                         dataset$Salary)
+
+# Encoding categorical data
+
+dataset$Country = factor(dataset$Country,
+                         levels = c('France','Spain','Germany'),
+                         labels = c(1,2,3))
+dataset$Purchased = factor(dataset$Purchased,
+                         levels = c('No','Yes'),
+                         labels = c(0,1))
+
+# Splitting the dataset into the Training set and Test set
+install.packages('caTools')
+library(caTools)
+
+set.seed(123)
+split <- sample.split(dataset$Purchased, SplitRatio = 0.8)
+split
+training_set <- subset(dataset, split == T)
+test_set <- subset(dataset, split == F)
+training_set
+test_set
+
+# Feature Scaling
+
+training_set[,2:3] <- scale(training_set[,2:3])
+test_set[,2:3] <- scale(test_set[,2:3])
+training_set
+test_set
