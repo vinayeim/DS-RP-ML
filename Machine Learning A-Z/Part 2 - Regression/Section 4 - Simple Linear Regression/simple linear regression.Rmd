@@ -17,8 +17,10 @@ $y = b_0 + b_1*X_1$
 
 * y = Dependent variable(DV).
 * X = Independent variable(IV).
-* $b_1$ = Cofficient for the Independent variable.
-* $b_0$ = Constant term.
+
+$b_1$ = Cofficient for the Independent variable.
+
+$b_0$ = Constant term.
 
 ```{r=Simple Liner Regression}
 

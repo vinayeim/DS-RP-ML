@@ -1,0 +1,35 @@
+---
+title: "Polynomial_Regression"
+author: "Vinay Kumar M"
+date: "March 26, 2017"
+output: html_document
+---
+
+## Polynomial_Regression
+
+
+**Formula**
+
+$y = b_0 + b_1*X_1 + b_1*X_1^2 + ... + b_n*X_1^n $
+
+**Variable Defination**
+
+* y = Dependent variable(DV).
+* X = Independent variable(IV).
+
+$b_1$ = Cofficient for the Independent variable.
+
+$b_0$ = Constant term.
+
+$b_1*X_1^2$ = The Power of x_1 Squred (The curve becomes parabolic it will fit the data better)
+```{r=Simple Liner Regression}
+
+```
+
+**Notes**
+
+The Polynomial Regression model is obtained by taking a Linear Regression model in which some of the independent variables are the polynomial features, which makes it a Non Linear Regression model in the end (due to the polynomial features).
+
+We can illustrate this by this schema:
+
+Linear Model => Adding the polynomial features => Polynomial Model = Non Linear Model

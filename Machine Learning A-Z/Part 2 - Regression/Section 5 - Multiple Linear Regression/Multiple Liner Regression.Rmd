@@ -1,0 +1,50 @@
+---
+title: "Regression"
+author: "Vinay Kumar M"
+date: "March 25, 2017"
+output: html_document
+---
+
+## Multiple Liner Regression
+
+
+**Formula**
+
+$y = b_0 + b_1*X_1 + b_2*X_2 + ... +b_n*X_n$
+
+**Variable Defination**
+
+* y = Dependent variable(DV).
+* X = Independent variables(IVs).
+
+$b_1*X_1 + b_2*X_2 + ... +b_n*X_n$ = Cofficient for the Independent variables.
+
+$b_0$ = Constant term.
+
+```{r=Multiple Liner Regression}
+
+```
+
+
+## A Caveat
+
+Linear Regrission have Assumptions they are :
+
+1. Linearity.
+2. Homoscedasticity.
+3. Multivariate normality.
+4. Independencen of errors.
+5. Lack of multicollinearity.
+
+**Example for Multiple Linear Regression**
+
+In this example we are talking about dummy variables So basically the information that we have is the profit of each company or of each startup then the R&D spend the admin spend the marketing spend So those three are expenses that the company incurred and then the state in which it operates either in NewYork or California.
+The challenge that we're faced with is that the venture capitalist Fund wants to see if there's any correlations between profit and the months that have been spent on different expenses R&D admin and marketing and also with on which in which stage the company operates.
+Is there a correlation between profit and all these variables and how would you go about creating a model to understand how knowing R&D spend admin and marketing and stay to predict profit.
+so therefore profit is our dependent variable and the rest the blue ones are all independent variables. And what we need to do is build a linear regression.
+
+*So here what Regression does:*
+
+*Formula* : $y = b_0 + b_1*X_1 + b_2*X_2 + b_3*X_3 + b_4*D_1$
+
+*In our case the Formula* : $profit = b_0 + b_1*R&D Spend + b_2*Admin + b_3*Marketing + d_4*State$
